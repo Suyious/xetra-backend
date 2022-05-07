@@ -14,7 +14,7 @@ const ErrorMiddleware = require("./middlewares/error")
 app.use(express.json());    //always remember the parenthesis
 app.use(express.urlencoded({extended: true}))
 app.use(cookieparser());
-app.use(cors({credentials: true, origin: process.env.CORS_ORIGIN}));
+app.use(cors({credentials: true, origin: process.env.CORS_ORIGIN.split(" ")}));
 app.use(fileupload());
 
 //  Route Imports
