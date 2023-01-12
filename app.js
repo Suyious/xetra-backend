@@ -15,7 +15,7 @@ app.use(express.json());    //always remember the parenthesis
 app.use(express.urlencoded({extended: true}))
 app.use(cookieparser());
 app.use(cors({credentials: true, origin: process.env.CORS_ORIGIN.split(" ")}));
-app.use(fileupload());
+app.use(fileupload({}));
 
 //  Route Imports
 const product = require("./routes/productRoute");
